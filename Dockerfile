@@ -10,4 +10,4 @@ RUN apt-get update \
 RUN hg clone https://bitbucket.org/osrf/srcsim
 
 # start a roscore
-CMD ["roscore"]
+CMD ["python -m SimpleHTTPServer 4000"]
