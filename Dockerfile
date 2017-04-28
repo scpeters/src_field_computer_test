@@ -8,3 +8,6 @@ RUN apt-get update \
 
 # clone srcsim
 RUN hg clone https://bitbucket.org/osrf/srcsim
+
+# start a roscore
+CMD ["roscore"]
