@@ -9,5 +9,7 @@ RUN apt-get update \
 # clone srcsim
 RUN hg clone https://bitbucket.org/osrf/srcsim
 
+EXPOSE 8000
+
 # start a roscore
 CMD ["python", "-m", "SimpleHTTPServer", "8000"]
