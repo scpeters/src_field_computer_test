@@ -9,6 +9,9 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 # clone srcsim
+ENV WS /home/docker/ws
+RUN mkdir -p ${WS}/src
+WORKDIR ${WS}/src
 RUN hg clone https://bitbucket.org/osrf/srcsim
 
 EXPOSE 8000
