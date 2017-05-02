@@ -4,6 +4,8 @@ FROM ros:indigo-ros-base
 RUN apt-get update \
  && apt-get install -y \
     ros-indigo-ihmc-msgs \
+    ros-indigo-tf \
+    ros-indigo-tf2 \
  && rm -rf /var/lib/apt/lists/*
 
 # clone srcsim
