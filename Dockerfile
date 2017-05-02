@@ -3,6 +3,7 @@ FROM ros:indigo-ros-base
 # add ihmc messages
 RUN apt-get update \
  && apt-get install -y \
+    ros-indigo-rosbag \
     ros-indigo-ihmc-msgs \
     ros-indigo-tf \
     ros-indigo-tf2 \
@@ -13,6 +14,9 @@ ENV WS /home/docker/ws
 RUN mkdir -p ${WS}/src
 WORKDIR ${WS}/src
 RUN hg clone https://bitbucket.org/osrf/srcsim
+
+# include bag file with footsteps preprogrammed
+ADD footsteps_2017-05-02-14-40-59.bag ${WS}/
 
 EXPOSE 8000
 
