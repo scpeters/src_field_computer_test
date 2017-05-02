@@ -17,6 +17,8 @@ RUN hg clone https://bitbucket.org/osrf/srcsim
 
 # include bag file with footsteps preprogrammed
 ADD footsteps_2017-05-02-14-40-59.bag ${WS}/
+RUN echo "while rosbag play ${WS}/src/2017-05-02-14-40-59.bag && python scripts/rossleep.py 8; do date; done" \
+  > do_footsteps.bash
 
 EXPOSE 8000
 
