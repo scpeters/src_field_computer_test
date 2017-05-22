@@ -31,5 +31,5 @@ RUN echo "while rosbag play ${WS}/footsteps_2017-05-02-14-40-59.bag && python ${
 
 EXPOSE 8000
 
-# start a roscore
+# start a simple http server
 CMD ["python", "-m", "SimpleHTTPServer", "8000"]
