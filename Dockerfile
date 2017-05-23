@@ -30,6 +30,10 @@ RUN echo "while rosbag play ${WS}/footsteps_2017-05-02-14-40-59.bag && python ${
   > do_footsteps.bash
 
 EXPOSE 8000
+EXPOSE 8001
+ENV ROS_MASTER_URI http://127.0.0.1:8001
 
-# start a simple http server
-CMD ["python", "-m", "SimpleHTTPServer", "8000"]
+# startup script
+# simple HTTP server and a roscore
+ADD startup.bash startup.bash
+CMD ["./startup.bash"]
